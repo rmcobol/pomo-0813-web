@@ -10,6 +10,7 @@ let remainingSeconds = getSetMinutes() * 60;
 let timerId = null;
 
 const timeDisplay = document.getElementById("time-display");
+const clockDisplay = document.getElementById("clock");
 
 function formatTime(totalSeconds) {
   const minutes = Math.floor(totalSeconds / 60);
@@ -21,7 +22,17 @@ function updateDisplay() {
   timeDisplay.textContent = formatTime(remainingSeconds);
 }
 
+function updateClock() {
+  const now = new Date();
+  const hours = String(now.getHours()).padStart(2, "0");
+  const minutes = String(now.getMinutes()).padStart(2, "0");
+  const seconds = String(now.getSeconds()).padStart(2, "0");
+  clockDisplay.textContent = `${hours}:${minutes}:${seconds}`;
+}
+
 updateDisplay();
+updateClock();
+setInterval(updateClock, 1000);
 
 function startTimer() {
   if (timerId !== null) return;

@@ -49,6 +49,14 @@ h1 {
   letter-spacing: 1px;
 }
 
+.clock {
+  margin-top: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #999999;
+  font-variant-numeric: tabular-nums;
+}
+
 .time-display {
   margin: 40px 0;
   font-size: 64px;
